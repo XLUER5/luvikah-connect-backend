@@ -13,7 +13,7 @@ const router = express.Router();
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const destinantionPath = path.resolve(
-      "/Users/luiscaestrada/NODEJS/luvikah-connect-backend/imagenes"
+      "/home/ubuntu/luvikah-connect-backend/imagenes"
     );
     cb(null, destinantionPath);
   },
