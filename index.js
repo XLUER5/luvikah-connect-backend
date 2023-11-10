@@ -5,6 +5,7 @@ import db from "./db/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import galeriaRoutes from "./routes/galeriaRoutes.js";
 import comentarioRoutes from "./routes/comentarioRoutes.js";
+import likeRoutes from "./routes/likesRoutes.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use("/imagenes", express.static("./imagenes"));
 app.use("/user", userRoutes);
 app.use("/galeria", galeriaRoutes);
 app.use("/comentario", comentarioRoutes);
+app.use("/votar", likeRoutes);
 
 try {
   await db.authenticate();
