@@ -2,7 +2,11 @@ import express from "express";
 import multer from "multer";
 import path from "path";
 
-import { getGaleria, newPhoto } from "../controllers/GaleriaController.js";
+import {
+  getGaleria,
+  newPhoto,
+  getGaleriaUser,
+} from "../controllers/GaleriaController.js";
 
 const router = express.Router();
 
@@ -24,5 +28,7 @@ const upload = multer({ storage });
 router.get("/", getGaleria);
 
 router.post("/subirImagen", upload.single("imagen"), newPhoto);
+
+router.post("/galeriaUsuario", getGaleriaUser);
 
 export default router;

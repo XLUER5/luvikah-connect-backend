@@ -4,6 +4,7 @@ import db from "./db/db.js";
 
 import userRoutes from "./routes/userRoutes.js";
 import galeriaRoutes from "./routes/galeriaRoutes.js";
+import comentarioRoutes from "./routes/comentarioRoutes.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use("/imagenes", express.static("./imagenes"));
 //Rutas del backend
 app.use("/user", userRoutes);
 app.use("/galeria", galeriaRoutes);
+app.use("/comentario", comentarioRoutes);
 
 try {
   await db.authenticate();
