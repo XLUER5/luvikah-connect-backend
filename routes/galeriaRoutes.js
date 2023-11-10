@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.get("/", getGaleria);
+router.get("/:idUser", getGaleria);
 
 router.post("/subirImagen", upload.single("imagen"), newPhoto);
 
